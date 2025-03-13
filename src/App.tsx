@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import KPIBalloon from './components/KPIBalloon';
 import SalesChart from './components/SalesChart';
-import { calculateKPIs, initialSalesData, formatCurrency, calculateProjections, SalesData } from './data/salesData';
-import { ShoppingCart, TrendingUp, DollarSign, BarChart, CreditCard } from 'lucide-react';
+import RegistrationChart from './components/RegistrationChart';
+import { calculateKPIs, initialSalesData, formatCurrency } from './data/salesData';
+import { registrationData, calculateTotalRegistrations } from './data/registrationData';
+import { ShoppingCart, TrendingUp, DollarSign, BarChart, CreditCard, UserPlus } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [projectionPeriod, setProjectionPeriod] = useState<'6m' | '1y' | '3y' | '5y' | 'none'>('1y');
-  const projectedData = calculateProjections(initialSalesData, projectionPeriod);
   const kpis = calculateKPIs(initialSalesData);
-
-    // Calculate the final projected value
-  const finalProjectedValue = projectionPeriod !== 'none' ? projectedData[projectedData.length - 1].totalSales : undefined;
+  const totalRegistrations = calculateTotalRegistrations(registrationData);
 
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
@@ -34,6 +32,11 @@ const App: React.FC = () => {
           icon={<TrendingUp className="text-red-500" size={40} />}
         />
         <KPIBalloon
+          title="Total de Cadastros"
+          value={totalRegistrations}
+          icon={<UserPlus className="text-indigo-500" size={40} />}
+        />
+        <KPIBalloon
           title="Total de Pedidos (Acumulado até Fev/25)"
           value={kpis.totalOrders}
           icon={<BarChart className="text-purple-500" size={40} />}
@@ -43,15 +46,11 @@ const App: React.FC = () => {
           value={formatCurrency(kpis.averageTicket)}
           icon={<CreditCard className="text-yellow-500" size={40} />}
         />
-        {finalProjectedValue !== undefined && (
-          <KPIBalloon
-            title={<span className="text-lg font-semibold">Projeção Final</span>}
-            value={<span className="text-3xl font-bold text-purple-600">{formatCurrency(finalProjectedValue)}</span>}
-            icon={<TrendingUp className="text-purple-500" size={40} />}
-          />
-        )}
       </div>
-      <SalesChart projectionPeriod={projectionPeriod} setProjectionPeriod={setProjectionPeriod} />
+      <div className="grid grid-cols-1 gap-8">
+        <SalesChart />
+        <RegistrationChart />
+      </div>
     </div>
   );
 };

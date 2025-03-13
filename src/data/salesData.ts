@@ -1,4 +1,4 @@
-interface SalesData {
+export interface SalesData {
   month: string;
   newReactivatedSales: number;
   newReactivatedOrders: number;
@@ -6,6 +6,7 @@ interface SalesData {
   recurringOrders: number;
   totalSales: number;
   totalOrders: number;
+  isProjected?: boolean;
 }
 
 const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
@@ -30,10 +31,12 @@ export const initialSalesData: SalesData[] = [
 
 export const calculateProjections = (data: SalesData[], period: '6m' | '1y' | '3y' | '5y' | 'none'): SalesData[] => {
   if (period === 'none') {
-    return data; // Return only the initial data if no projection is selected
+    return data;
   }
 
-  const projectedData = [...data];
+  // Marcar dados reais
+  const realData = data.map(item => ({ ...item, isProjected: false }));
+  const projectedData = [...realData];
   const lastRealMonth = data[data.length - 1];
   let numMonths;
 
@@ -51,25 +54,29 @@ export const calculateProjections = (data: SalesData[], period: '6m' | '1y' | '3
       numMonths = 60;
       break;
     default:
-      numMonths = 12; // Default to 1 year
+      numMonths = 12;
   }
 
-  const startMonthIndex = 2; // Starting from March (index 2 in monthNames)
-  const startYear = 2025;
+  // Encontrar o índice do último mês real
+  const [lastMonth, lastYear] = lastRealMonth.month.split('/');
+  let currentMonthIndex = monthNames.indexOf(lastMonth);
+  let currentYear = parseInt(lastYear, 10);
 
   for (let i = 0; i < numMonths; i++) {
-    const monthIndex = (startMonthIndex + i) % 12;
-    const yearOffset = Math.floor((startMonthIndex + i) / 12);
-    const year = startYear + yearOffset;
-    const monthYear = `${monthNames[monthIndex]}/${year.toString().slice(-2)}`;
+    // Avançar para o próximo mês
+    currentMonthIndex++;
+    if (currentMonthIndex >= 12) {
+      currentMonthIndex = 0;
+      currentYear++;
+    }
 
+    const monthYear = `${monthNames[currentMonthIndex]}/${currentYear.toString().slice(-2)}`;
     const prevMonthData = projectedData[projectedData.length - 1];
 
-    const newReactivatedSales = prevMonthData.newReactivatedSales * 1.025; // 2.5% growth
+    const newReactivatedSales = prevMonthData.newReactivatedSales * 1.025;
     const recurringSales = prevMonthData.totalSales * 0.8;
     const totalSales = newReactivatedSales + recurringSales;
 
-    // Dummy values, not relevant for the chart.
     const newReactivatedOrders = Math.round(prevMonthData.newReactivatedOrders * 1.03);
     const recurringOrders = Math.round(prevMonthData.recurringOrders * 1.01);
     const totalOrders = newReactivatedOrders + recurringOrders;
@@ -81,7 +88,8 @@ export const calculateProjections = (data: SalesData[], period: '6m' | '1y' | '3
       recurringSales,
       recurringOrders,
       totalSales,
-      totalOrders
+      totalOrders,
+      isProjected: true
     });
   }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -9,108 +9,147 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { calculateProjections, initialSalesData, SalesData } from '../data/salesData';
+import { calculateProjections, initialSalesData, SalesData, formatCurrency } from '../data/salesData';
 import TicketCounts from './TicketCounts';
 
-const SalesChart: React.FC<{
-  projectionPeriod: '6m' | '1y' | '3y' | '5y' | 'none';
-  setProjectionPeriod: React.Dispatch<React.SetStateAction<'6m' | '1y' | '3y' | '5y' | 'none'>>;
-}> = ({ projectionPeriod, setProjectionPeriod }) => {
+type ProjectionPeriod = '6m' | '1y' | '3y' | '5y' | 'none';
 
-  const fullData = calculateProjections(initialSalesData, projectionPeriod);
-  const displayedData = fullData;
+const ProjectionChart: React.FC<{
+  period: ProjectionPeriod;
+  title: string;
+}> = ({ period, title }) => {
+  const realData = initialSalesData;
+  const allData = period === 'none' ? realData : calculateProjections(initialSalesData, period);
+  const finalValue = period !== 'none' ? allData[allData.length - 1].totalSales : null;
 
-  const projectionStartMonth = 'Mar/25';
-
-  const isProjectedMonth = (month: string) => {
-    if (projectionPeriod === 'none') {
-      return false; // No projection, so no projected months
-    }
-
-    const [projMonth, projYear] = projectionStartMonth.split('/');
-    const [dataMonth, dataYear] = month.split('/');
-
-    // For months that are already in the "Mar/25" format
-    if (dataMonth.length === 3) {
-      const monthNames = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-      const projMonthIndex = monthNames.indexOf(projMonth);
-      const dataMonthIndex = monthNames.indexOf(dataMonth);
-
-      if (dataYear > projYear) {
-        return true;
-      } else if (dataYear === projYear) {
-        return dataMonthIndex >= projMonthIndex;
-      } else {
-        return false;
-      }
-    }
-    return false;
+  const CustomizedDot = (props: any) => {
+    const { cx, cy, payload } = props;
+    return payload.isProjected ? null : <circle cx={cx} cy={cy} r={4} fill={props.stroke} />;
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 w-full">
+    <div className="bg-white rounded-lg shadow-md p-4 w-full mb-8">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-gray-900">Evolução de Vendas</h2>
-        <div className="flex items-center">
-          <span className="mr-2 text-sm text-gray-600">Projeção</span>
-          <select
-            value={projectionPeriod}
-            onChange={(e) => setProjectionPeriod(e.target.value as '6m' | '1y' | '3y' | '5y' | 'none')}
-            className="block w-auto px-4 py-2 text-sm leading-5 text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-          >
-            <option value="none">Nenhuma</option>
-            <option value="6m">6 Meses</option>
-            <option value="1y">1 Ano</option>
-            <option value="3y">3 Anos</option>
-            <option value="5y">5 Anos</option>
-          </select>
-        </div>
+        <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+        {finalValue && (
+          <div className="text-lg font-semibold text-purple-600">
+            Valor Final: {formatCurrency(finalValue)}
+          </div>
+        )}
       </div>
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart
-          data={displayedData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis />
-          <Tooltip formatter={(value: any) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)} />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="newReactivatedSales"
-            stroke="#82ca9d"
-            strokeWidth={2}
-            dot={false}
-            name="Novos/Reativados"
-            strokeDasharray={(dataPoint) => isProjectedMonth(dataPoint.month) ? "5 5" : ""}
-          />
-          <Line
-            type="monotone"
-            dataKey="recurringSales"
-            stroke="#ffc658"
-            strokeWidth={2}
-            dot={false}
-            name="Recorrentes"
-            strokeDasharray={(dataPoint) => isProjectedMonth(dataPoint.month) ? "5 5" : ""}
-          />
-          <Line
-            type="monotone"
-            dataKey="totalSales"
-            stroke="#8884d8"
-            strokeWidth={2}
-            dot={false}
-            name="Total"
-            strokeDasharray={(dataPoint) => isProjectedMonth(dataPoint.month) ? "5 5" : ""}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-      <TicketCounts data={displayedData} />
+      <div style={{ width: '100%', height: '400px' }}>
+        <ResponsiveContainer>
+          <LineChart
+            data={allData}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" />
+            <YAxis />
+            <Tooltip formatter={(value: any) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)} />
+            <Legend />
+            {period === 'none' ? (
+              // Dados reais apenas para o gráfico "Realizado"
+              <>
+                <Line
+                  type="monotone"
+                  dataKey="newReactivatedSales"
+                  stroke="#82ca9d"
+                  strokeWidth={2}
+                  dot={{ r: 4 }}
+                  name="Novos/Reativados"
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="recurringSales"
+                  stroke="#ffc658"
+                  strokeWidth={2}
+                  dot={{ r: 4 }}
+                  name="Recorrentes"
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="totalSales"
+                  stroke="#8884d8"
+                  strokeWidth={2}
+                  dot={{ r: 4 }}
+                  name="Total"
+                  connectNulls
+                />
+              </>
+            ) : (
+              // Apenas linhas projetadas para os gráficos de projeção
+              <>
+                <Line
+                  type="monotone"
+                  dataKey="newReactivatedSales"
+                  stroke="#82ca9d"
+                  strokeWidth={2}
+                  dot={false}
+                  name="Novos/Reativados"
+                  strokeDasharray="5 5"
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="recurringSales"
+                  stroke="#ffc658"
+                  strokeWidth={2}
+                  dot={false}
+                  name="Recorrentes"
+                  strokeDasharray="5 5"
+                  connectNulls
+                />
+                <Line
+                  type="monotone"
+                  dataKey="totalSales"
+                  stroke="#8884d8"
+                  strokeWidth={2}
+                  dot={false}
+                  name="Total"
+                  strokeDasharray="5 5"
+                  connectNulls
+                />
+              </>
+            )}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      {period === 'none' ? (
+        <>
+          <div className="mt-4 text-sm text-gray-600 mb-4">
+            <p>Dados históricos apurados de Set/24 até Fev/25</p>
+          </div>
+          <TicketCounts data={allData} />
+        </>
+      ) : (
+        <div className="mt-4 text-sm text-gray-600">
+          <p><strong>Parâmetros de Projeção:</strong></p>
+          <ul className="list-disc pl-5">
+            <li>Novos/Reativados: Crescimento de 2.5% ao mês</li>
+            <li>Recorrentes: 80% do faturamento total do mês anterior</li>
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SalesChart: React.FC = () => {
+  return (
+    <div className="space-y-8">
+      <ProjectionChart period="none" title="Evolução de Vendas (Realizado)" />
+      <ProjectionChart period="6m" title="Evolução de Vendas (Projeção 6 Meses)" />
+      <ProjectionChart period="1y" title="Evolução de Vendas (Projeção 1 Ano)" />
+      <ProjectionChart period="3y" title="Evolução de Vendas (Projeção 3 Anos)" />
+      <ProjectionChart period="5y" title="Evolução de Vendas (Projeção 5 Anos)" />
     </div>
   );
 };

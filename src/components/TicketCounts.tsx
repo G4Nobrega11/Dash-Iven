@@ -24,9 +24,6 @@ const TicketCounts: React.FC<TicketCountsProps> = ({ data }) => {
         <AverageTicket title="Ticket Médio Novos/Reativados" value={averageNewReactivatedTicket} />
         <AverageTicket title="Ticket Médio Recorrentes" value={averageRecurringTicket} />
       </div>
-      <p className="text-xs text-gray-500 text-center">
-        Projeção considera um aumento de 5% em novos clientes a cada mês e uma retenção de 80% das vendas do mês anterior.
-      </p>
     </div>
   );
 };
