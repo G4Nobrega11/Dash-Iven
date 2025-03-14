@@ -32,7 +32,7 @@ const App: React.FC = () => {
           icon={<TrendingUp className="text-red-500" size={40} />}
         />
         <KPIBalloon
-          title="Total de Cadastros"
+          title="Total de Cadastrados/Reativados"
           value={totalRegistrations}
           icon={<UserPlus className="text-indigo-500" size={40} />}
         />

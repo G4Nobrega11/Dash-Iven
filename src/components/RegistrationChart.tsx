@@ -13,8 +13,8 @@ import { registrationData } from '../data/registrationData';
 
 const RegistrationChart: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 w-full">
-      <h2 className="text-xl font-bold text-gray-900 mb-4">Evolução de Cadastros</h2>
+    <div className="bg-white rounded-lg shadow-md p-4 w-full mb-8">
+      <h2 className="text-xl font-bold text-gray-900 mb-4">Evolução de Cadastrados/Reativados</h2>
       <div style={{ width: '100%', height: '400px' }}>
         <ResponsiveContainer>
           <LineChart
@@ -34,10 +34,10 @@ const RegistrationChart: React.FC = () => {
             <Line
               type="monotone"
               dataKey="registrations"
-              stroke="#4f46e5"
+              stroke="#8884d8"
               strokeWidth={2}
               dot={{ r: 4 }}
-              name="Cadastros"
+              name="Cadastrados/Reativados"
             />
           </LineChart>
         </ResponsiveContainer>
