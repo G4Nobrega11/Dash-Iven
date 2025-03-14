@@ -12,7 +12,7 @@ const App: React.FC = () => {
 
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Dashboard de Vendas</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">Dashboard de Vendas - IVEN / VPJ Alimentos</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
         <KPIBalloon
           title={<span className="text-lg font-semibold">Faturamento Total (Realizado)</span>}
