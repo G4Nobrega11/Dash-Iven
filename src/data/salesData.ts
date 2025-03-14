@@ -73,7 +73,7 @@ export const calculateProjections = (data: SalesData[], period: '6m' | '1y' | '3
     const monthYear = `${monthNames[currentMonthIndex]}/${currentYear.toString().slice(-2)}`;
     const prevMonthData = projectedData[projectedData.length - 1];
 
-    const newReactivatedSales = prevMonthData.newReactivatedSales * 1.025;
+    const newReactivatedSales = prevMonthData.newReactivatedSales * 1.05;
     const recurringSales = prevMonthData.totalSales * 0.8;
     const totalSales = newReactivatedSales + recurringSales;
 

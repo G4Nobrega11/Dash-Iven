@@ -133,7 +133,7 @@ const ProjectionChart: React.FC<{
         <div className="mt-4 text-sm text-gray-600">
           <p><strong>Parâmetros de Projeção:</strong></p>
           <ul className="list-disc pl-5">
-            <li>Novos/Reativados: Crescimento de 2.5% ao mês</li>
+            <li>Novos/Reativados: Crescimento de 5% ao mês</li>
             <li>Recorrentes: 80% do faturamento total do mês anterior</li>
           </ul>
         </div>
