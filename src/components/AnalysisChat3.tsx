@@ -20,7 +20,7 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Obrigada pela compreensão e pode deixar que vou te mantendo informado.',
       timestamp: '2025-02-20 16:31:01'
     },
@@ -44,13 +44,13 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Oi boa tarde Henrique, não esqueci de você não viu rsrsr To esperando ainda o retorno do financeiro, já cobrei eles hoje!',
       timestamp: '2025-02-20 15:32:13'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Boa tarde Henrique, assim que o financeiro me retornar eu te aviso 🤗',
       timestamp: '2025-02-19 12:50:38'
     },
@@ -68,13 +68,13 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Vou fazer a solicitação do prazo',
       timestamp: '2025-02-18 15:50:39'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Obrigada',
       timestamp: '2025-02-18 15:50:31'
     },
@@ -86,19 +86,19 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'https://share.jestor.fun/grupovpj/4577ec7116c9c9d454022c6301de7ef2?updateRecord=47.682.221/0001-50',
       timestamp: '2025-02-18 15:46:16'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'só confirma os dados para mim por favor',
       timestamp: '2025-02-18 15:46:15'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Obrigada',
       timestamp: '2025-02-18 15:46:06'
     },
@@ -258,13 +258,13 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Vou precisar de 3 NF do ramo alimentício e uma foto do estabelecimento para encaminhar para eles',
       timestamp: '2025-02-18 15:39:34'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Ok, vou precisar fazer a solicitação de prazo para nosso financeiro então, pois a principio é liberado via pix ou cartão em 2x',
       timestamp: '2025-02-18 15:37:59'
     },
@@ -276,7 +276,7 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Claro! Vocês trabalham com qual forma de pagamento com os outros fornecedores?',
       timestamp: '2025-02-18 15:22:13'
     },
@@ -294,7 +294,7 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**imagem**',
       timestamp: '2025-02-18 14:29:49',
       isImage: true
@@ -439,48 +439,48 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Sim, eu subo seu CNPJ para cadastro, mas ele só será efetivado após primeiro pedido. Vou precisar agora somente do contrato social!',
       timestamp: '2025-02-18 14:04:44'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**CATÁLOGO TODO DIA.pdf**',
       timestamp: '2025-02-18 14:03:18',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**Apresentação Linha Grill.pdf**',
       timestamp: '2025-02-18 14:03:18',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**VPJ - Black Angus VPJ.pdf**',
       timestamp: '2025-02-18 14:03:08',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**Cordeiro Dorper VPJ.pdf**',
       timestamp: '2025-02-18 14:03:08',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: '**VPJ Duroc Pork.pdf**',
       timestamp: '2025-02-18 14:03:08',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Mando sim',
       timestamp: '2025-02-18 14:02:56'
     },
@@ -504,13 +504,13 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Os produtos você já conhece?',
       timestamp: '2025-02-18 13:34:26'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Ok, vou subir seu CNPJ para cadastro',
       timestamp: '2025-02-18 13:34:18'
     },
@@ -528,13 +528,13 @@ const AnalysisChat3: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Como posso estar te ajudando?',
       timestamp: '2025-02-18 13:31:14'
     },
     {
       sender: 'user' as const,
-      senderName: 'Comercial VPJ Alimentos',
+      senderName: 'Vendedora',
       content: 'Boa tarde Henrique, é a Vendedora da VPJ alimentos! Vou dar andamento no seu atendimento por aqui.',
       timestamp: '2025-02-18 13:31:03'
     }
@@ -572,7 +572,7 @@ const AnalysisChat3: React.FC = () => {
             >
               {message.senderName && (
                 <div className={`text-xs ${message.sender === 'user' ? 'text-blue-200' : 'text-gray-600'} mb-1`}>
-                  {message.sender === 'user' ? 'Vendedora' : message.senderName}
+                  {message.senderName}
                 </div>
               )}
               

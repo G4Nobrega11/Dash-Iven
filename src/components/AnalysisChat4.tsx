@@ -34,13 +34,13 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Amarante VPJ Alimentos',
-      content: 'Olá! Tudo bem? 😃  Sou a Alessandra, especialista em vendas no seu segmento na VPJ Alimentos. Percebi que faz um tempo que não realizamos um pedido e quero entender como posso te apoiar nesse momento.  Temos novidades e condições especiais para clientes como você! Me conta, o que falta para fecharmos um novo pedido? Posso te ajudar com algo específico? Fico à disposição para te passar as melhores opções!🔥  Aguardo seu retorno!',
+      senderName: 'Vendedora VPJ',
+      content: 'Olá! Tudo bem? 😃  Sou especialista em vendas no seu segmento na VPJ Alimentos. Percebi que faz um tempo que não realizamos um pedido e quero entender como posso te apoiar nesse momento.  Temos novidades e condições especiais para clientes como você! Me conta, o que falta para fecharmos um novo pedido? Posso te ajudar com algo específico? Fico à disposição para te passar as melhores opções!🔥  Aguardo seu retorno!',
       timestamp: '2025-02-25 08:32:51'
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: 'Compreendo, qualquer dúvida estamos a disposição para achar a melhor proposta para você.',
       timestamp: '2025-02-07 15:08:18'
     },
@@ -52,20 +52,20 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: 'Olá, teve a oportunidade de ver nossa proposta? Posso ajudar com mais alguma informação? Quero ressaltar que nossas tabelas de preços que envio é temporária e pode ser atualizada diariamente.',
       timestamp: '2025-02-07 15:02:37'
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: '**imagem**',
       timestamp: '2025-02-04 15:31:30',
       isImage: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: 'Vou fazer seu orçamento e te encaminhar.',
       timestamp: '2025-02-04 15:25:11'
     },
@@ -89,7 +89,7 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: 'Você teria o CNPJ antigo?',
       timestamp: '2025-02-04 14:16:25'
     },
@@ -109,7 +109,7 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: 'Poderia me falar seu CNPJ por gentileza?',
       timestamp: '2025-02-04 14:12:58'
     },
@@ -121,7 +121,7 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Alessandra Silva VPJ Alimentos',
+      senderName: 'Vendedora VPJ',
       content: '**audio**',
       timestamp: '2025-02-04 14:12:43',
       isAudio: true
@@ -140,13 +140,13 @@ const AnalysisChat4: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora',
+      senderName: 'Vendedora VPJ',
       content: 'Há 20 anos, a VPJ Alimentos oferece o melhor em carnes de qualidade superior. Nossas certificações e premiações comprovam nosso compromisso com a excelência. Quer elevar o nível de seu negócio?',
       timestamp: '2024-12-04 16:54:25'
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora',
+      senderName: 'Vendedora VPJ',
       content: '**imagem**',
       timestamp: '2024-12-04 16:54:23',
       isImage: true
@@ -188,11 +188,7 @@ const AnalysisChat4: React.FC = () => {
             >
               {message.senderName && (
                 <div className={`text-xs ${message.sender === 'user' ? 'text-blue-200' : 'text-gray-600'} mb-1`}>
-                  {message.sender === 'user' 
-                    ? (message.senderName.includes('Vendedora') 
-                        ? 'Vendedora' 
-                        : 'Alessandra VPJ')
-                    : message.senderName}
+                  {message.sender === 'user' ? 'Vendedora VPJ' : message.senderName}
                 </div>
               )}
               
@@ -217,7 +213,7 @@ const AnalysisChat4: React.FC = () => {
             {message.sender === 'user' ? (
               <div className="flex-shrink-0 ml-1">
                 <div className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
-                  {message.senderName?.includes('Vendedora') ? 'VD' : 'AL'}
+                  VD
                 </div>
               </div>
             ) : null}
