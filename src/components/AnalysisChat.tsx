@@ -20,7 +20,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Perfeito João, fico à disposição para qualquer dúvida!',
       timestamp: '2025-01-23 10:26:58'
     },
@@ -32,7 +32,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Você pode acessar o portal do cliente em portal.vpjalimentos.com.br e no menu lateral selecionar "Fazer pedido". Lá você encontra todos os produtos disponíveis e pode montar seu carrinho. Qualquer dúvida estou à disposição!',
       timestamp: '2025-01-23 10:19:36'
     },
@@ -44,7 +44,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Excelente! Fico feliz em saber que decidiu seguir com a VPJ Alimentos. A aprovação significa que você já pode fazer pedidos conosco. Os produtos são de primeira linha e nosso sistema de entrega é muito eficiente.',
       timestamp: '2025-01-23 10:11:27'
     },
@@ -56,7 +56,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Oi João Paulo! Que bom falar com você novamente. Como posso ajudar?',
       timestamp: '2025-01-23 10:05:16'
     },
@@ -68,7 +68,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Perfeito João, estaremos aguardando. Tenha um excelente dia!',
       timestamp: '2025-01-15 16:05:27'
     },
@@ -80,7 +80,7 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Ótima notícia! Para darmos sequência no cadastro precisamos do CNPJ, Contrato Social e comprovante de endereço da empresa. Você consegue nos enviar esses documentos?',
       timestamp: '2025-01-15 15:57:19'
     },
@@ -92,26 +92,26 @@ const AnalysisChat: React.FC = () => {
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Fico à disposição para esclarecer qualquer dúvida adicional. Tenha uma ótima semana!',
       timestamp: '2025-01-15 11:16:48'
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: '**Catálogo_VPJ_2025.pdf**',
       timestamp: '2025-01-15 11:15:57',
       isFile: true
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Além disso, temos uma política de entrega rápida, com prazo máximo de 48h após a confirmação do pedido para a sua região. Nossa equipe de logística trabalha para garantir que os produtos cheguem frescos e na temperatura adequada.',
       timestamp: '2025-01-15 11:15:23'
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
       content: 'Oi João Paulo! A VPJ Alimentos oferece uma linha completa de produtos cárneos premium, incluindo cortes especiais de bovinos, suínos e cordeiro. Nossos diferenciais incluem produtos certificados, rastreabilidade completa e opções exclusivas como a linha Black Angus e Duroc Pork.',
       timestamp: '2025-01-15 11:13:45'
     },

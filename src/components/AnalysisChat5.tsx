@@ -362,7 +362,7 @@ const AnalysisChat5: React.FC = () => {
     <div className="bg-white rounded-lg shadow-md p-3 w-full mb-6">
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-lg font-bold text-gray-900">Ex. 5: Transferência para mesa de vendas sem atenção adequada</h2>
-        <span className="text-xs text-gray-500">Fev/25 a Mar/25</span>
+        <span className="text-xs text-gray-500">Data</span>
       </div>
       
       <div className="bg-gray-100 rounded-lg p-2 h-[400px] overflow-y-auto">
@@ -403,7 +403,7 @@ const AnalysisChat5: React.FC = () => {
                   : message.isImage 
                     ? 'text-purple-600 font-medium'
                     : message.isAudio
-                      ? 'text-green-600 font-medium'
+                      ? 'text-orange-600 font-medium'
                       : ''
               }`}>
                 {message.content}

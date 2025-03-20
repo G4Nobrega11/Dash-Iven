@@ -14,150 +14,311 @@ interface ChatMessage {
 const AnalysisChat4: React.FC = () => {
   const messages: ChatMessage[] = [
     {
-      sender: 'system' as const,
-      senderName: 'Alessandra Silva',
-      content: '**Contato:** Aline Santos Vendedora São Paulo - Telefones: 5519997285542',
-      timestamp: '2025-03-07 08:20:07'
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'ah tá entendi, lembrando que os pedidos devem ser programados tá, pra entrar em rota de produção.',
+      timestamp: '2025-03-07 16:13:13'
     },
     {
       sender: 'system' as const,
-      senderName: 'Alessandra Silva',
-      content: 'Perdão, o nome dela é Aline.',
-      timestamp: '2025-03-07 08:19:29'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alessandra Silva',
+      senderName: 'Eduardo Nicoletto',
       content: '**audio**',
-      timestamp: '2025-03-07 08:19:10',
-      isAudio: true
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Olá! Tudo bem? 😃  Sou especialista em vendas no seu segmento na VPJ Alimentos. Percebi que faz um tempo que não realizamos um pedido e quero entender como posso te apoiar nesse momento.  Temos novidades e condições especiais para clientes como você! Me conta, o que falta para fecharmos um novo pedido? Posso te ajudar com algo específico? Fico à disposição para te passar as melhores opções!🔥  Aguardo seu retorno!',
-      timestamp: '2025-02-25 08:32:51'
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Compreendo, qualquer dúvida estamos a disposição para achar a melhor proposta para você.',
-      timestamp: '2025-02-07 15:08:18'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Boa tarde Gabriella ! Sim… mais os preços estavam um pouco acima. Semana que vem peço cotação de novo. Obrigado 🙏 e bom final de semana',
-      timestamp: '2025-02-07 15:06:15'
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Olá, teve a oportunidade de ver nossa proposta? Posso ajudar com mais alguma informação? Quero ressaltar que nossas tabelas de preços que envio é temporária e pode ser atualizada diariamente.',
-      timestamp: '2025-02-07 15:02:37'
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: '**imagem**',
-      timestamp: '2025-02-04 15:31:30',
-      isImage: true
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Vou fazer seu orçamento e te encaminhar.',
-      timestamp: '2025-02-04 15:25:11'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Ou pode ser tambem 10.619.297/0001-21',
-      timestamp: '2025-02-04 14:49:57'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: '10.619.297/0003-93',
-      timestamp: '2025-02-04 14:41:38'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Sim',
-      timestamp: '2025-02-04 14:41:24'
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Você teria o CNPJ antigo?',
-      timestamp: '2025-02-04 14:16:25'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: '**imagem**',
-      timestamp: '2025-02-04 14:14:08',
-      isImage: true
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: '**audio**',
-      timestamp: '2025-02-04 14:13:48',
-      isAudio: true
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Poderia me falar seu CNPJ por gentileza?',
-      timestamp: '2025-02-04 14:12:58'
-    },
-    {
-      sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Aqui Alejandro de Empanadas Caminito',
-      timestamp: '2025-02-04 14:12:56'
-    },
-    {
-      sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: '**audio**',
-      timestamp: '2025-02-04 14:12:43',
+      timestamp: '2025-03-07 16:08:56',
       isAudio: true
     },
     {
       sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Me pasa preço de asado de tira / bife de chorizo / bife ancho / picanha / fraldinha / file mignon',
-      timestamp: '2025-02-04 13:58:17'
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-03-07 16:08:23',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Boa tarde Eduardo, tudo bem?',
+      timestamp: '2025-03-07 16:05:49'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**ESPECIAL BACON - 25 A 07 DE MARÇO.pdf**',
+      timestamp: '2025-02-26 08:30:44',
+      isFile: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Bom dia Daniel, tudo bem?  Vamos efetivar seu cadastro, com um primeiro pedido?',
+      timestamp: '2025-02-21 09:37:15'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Olá Eduardo! Seu cadastro com a VPJ Alimentos foi finalizado e, a partir de agora, estarei à disposição para acompanhá-lo(a) em seus atendimentos. Podemos dar continuidade ao seu pedido?',
+      timestamp: '2025-02-20 17:38:33'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Mandei a ficha técnica deles para você.',
+      timestamp: '2025-02-20 17:18:13'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**531.pdf**',
+      timestamp: '2025-02-20 17:17:46',
+      isFile: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**993.pdf**',
+      timestamp: '2025-02-20 17:17:46',
+      isFile: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Mandei para cadastro, assim que liberar colocamos seu pedido',
+      timestamp: '2025-02-20 16:54:10'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'tenho sim!! vou te mandar',
+      timestamp: '2025-02-20 16:53:52'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**imagem**',
+      timestamp: '2025-02-20 16:53:43',
+      isImage: true
     },
     {
       sender: 'system' as const,
-      senderName: 'Alejandro',
-      content: 'Gabriella boa tarde',
-      timestamp: '2025-02-04 13:58:11'
+      senderName: 'Eduardo Nicoletto',
+      content: 'Tem fotos ?',
+      timestamp: '2025-02-20 16:52:48'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Valores',
+      timestamp: '2025-02-20 16:52:37'
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
-      content: 'Há 20 anos, a VPJ Alimentos oferece o melhor em carnes de qualidade superior. Nossas certificações e premiações comprovam nosso compromisso com a excelência. Quer elevar o nível de seu negócio?',
-      timestamp: '2024-12-04 16:54:25'
+      senderName: 'Vendedora',
+      content: 'eu tenho o bacon em cubos e fatiado',
+      timestamp: '2025-02-20 16:45:36'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Uso',
+      timestamp: '2025-02-20 16:45:25'
     },
     {
       sender: 'user' as const,
-      senderName: 'Vendedora VPJ',
+      senderName: 'Vendedora',
+      content: 'bacon você usa?',
+      timestamp: '2025-02-20 16:45:19'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'sim, e é o que eu mais vendo aqui.',
+      timestamp: '2025-02-20 16:43:29'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'O Classic seria mais saboroso?',
+      timestamp: '2025-02-20 16:42:37'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Pode faze a retirada sim, caso não atinge o valor do pedido mínimo.  o de 180g que é o blend, ele é mistura de acém e peito. o de 180g que é o classic angus, ele é feito dos recortes da nossa desossa diária, digamos que ele não tenha uma "receita" ao certo.',
+      timestamp: '2025-02-20 16:36:04'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-02-20 16:29:45',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Para efetivar o pedido, precisamos por um primeiro pedido.  você chegou a ver os valores?',
+      timestamp: '2025-02-20 16:28:24'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**reação**',
+      timestamp: '2025-02-20 16:27:46',
+      isReaction: true
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
       content: '**imagem**',
-      timestamp: '2024-12-04 16:54:23',
+      timestamp: '2025-02-20 16:27:18',
       isImage: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'https://share.jestor.fun/grupovpj/4577ec7116c9c9d454022c6301de7ef2?updateRecord=55371359000167',
+      timestamp: '2025-02-20 16:22:27'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Na caixa do HB cód 1371, vão 28 peças Na caixa do HB 622 e 986, vão 66 peças',
+      timestamp: '2025-02-20 16:16:50'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Em laranja, cód do item Em amarelo, peso aproximado da caixa Em verde, preço do kg Em azul preço, equivalente a uma caixa',
+      timestamp: '2025-02-20 16:16:24'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**imagem**',
+      timestamp: '2025-02-20 16:16:21',
+      isImage: true
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Ta ok',
+      timestamp: '2025-02-20 16:14:30'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**audio**',
+      timestamp: '2025-02-20 16:12:58',
+      isAudio: true
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-02-20 16:11:05',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**audio**',
+      timestamp: '2025-02-20 15:24:00',
+      isAudio: true
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-02-20 15:23:01',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: '**audio**',
+      timestamp: '2025-02-20 15:17:55',
+      isAudio: true
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-02-20 15:16:45',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'De 180g, temos o blend que é acém e peito  o classic Angus Na linha black Angus, tenho o de costela, 180g. O de costela foi eleito o melhor do Brasil.   O de pernil de cordeiro nosso é de 150g',
+      timestamp: '2025-02-20 15:08:23'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'ah legal.',
+      timestamp: '2025-02-20 15:04:51'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '**audio**',
+      timestamp: '2025-02-20 15:00:48',
+      isAudio: true
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Ah legal, estamos próximos, somos de Pirassununga.   Qual gramatura de HB você trabalha atualmente?',
+      timestamp: '2025-02-20 14:59:12'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: '55371359000167',
+      timestamp: '2025-02-20 14:57:22'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Poderia me informar seu CNPJ Eduardo?',
+      timestamp: '2025-02-20 14:57:03'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Algum representante próximo',
+      timestamp: '2025-02-20 14:56:50'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Queria saber sobre os hambúrguer da VPJ',
+      timestamp: '2025-02-20 14:56:44'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Me chamo Kelviene e farei seu atendimento Eduardo, como eu posso te ajudar?',
+      timestamp: '2025-02-20 14:54:35'
+    },
+    {
+      sender: 'system' as const,
+      senderName: 'Eduardo Nicoletto',
+      content: 'Bem !',
+      timestamp: '2025-02-20 14:47:18'
+    },
+    {
+      sender: 'user' as const,
+      senderName: 'Vendedora',
+      content: 'Oi Eduardo, vi que você se registrou no formulário de parcerias no site (www.VPJALIMENTOS.com.br). Está tudo bem?',
+      timestamp: '2025-02-20 14:47:06'
     }
   ].reverse(); // Inverte a ordem para mostrar do mais antigo para o mais recente
 
   return (
     <div className="bg-white rounded-lg shadow-md p-3 w-full mb-6">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-lg font-bold text-gray-900">Ex. 4: Cliente argentino - cotação sem retorno e confusão de atendentes</h2>
-        <span className="text-xs text-gray-500">Dez/24 a Mar/25</span>
+        <h2 className="text-lg font-bold text-gray-900">Ex. 4: Cliente hamburgueria - negociação técnica com 16 trocas de áudio</h2>
+        <span className="text-xs text-gray-500">Fev/25 a Mar/25</span>
       </div>
       
       <div className="bg-gray-100 rounded-lg p-2 h-[400px] overflow-y-auto">
@@ -169,7 +330,7 @@ const AnalysisChat4: React.FC = () => {
             {message.sender === 'system' ? (
               <div className="flex-shrink-0 mr-1">
                 <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
-                  {message.senderName?.split(' ')[0].substring(0, 2).toUpperCase()}
+                  EN
                 </div>
               </div>
             ) : null}
@@ -188,7 +349,7 @@ const AnalysisChat4: React.FC = () => {
             >
               {message.senderName && (
                 <div className={`text-xs ${message.sender === 'user' ? 'text-blue-200' : 'text-gray-600'} mb-1`}>
-                  {message.sender === 'user' ? 'Vendedora VPJ' : message.senderName}
+                  {message.senderName}
                 </div>
               )}
               
@@ -198,7 +359,7 @@ const AnalysisChat4: React.FC = () => {
                   : message.isImage 
                     ? 'text-purple-600 font-medium'
                     : message.isAudio
-                      ? 'text-green-600 font-medium'
+                      ? 'text-orange-600 font-medium'
                       : ''
               }`}>
                 {message.content}
